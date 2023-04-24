@@ -17,7 +17,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(value = {Exception.class})
-    ResponseEntity<ApiResponse> handleBusinessException(Exception exception) {
+    ResponseEntity<ApiResponse> handleSystemException(Exception exception) {
         String message = "Bạn hãy vui lòng thử lại. Nếu vẫn không thành công, hay liên hệ CSKH theo hotline 19001009";
         return new ResponseEntity<>(new ApiResponse("SYSTEM_EXCEPTION", message, null), HttpStatus.INTERNAL_SERVER_ERROR);
     }

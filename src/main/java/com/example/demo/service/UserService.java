@@ -14,4 +14,8 @@ public class UserService {
     public void createUser(UserDto userDto) {
         userRepository.save(new User(userDto.getName()));
     }
+
+    public User getUser(String name, String password) {
+        return userRepository.findByNameAndPassword(name, password);
+    }
 }
